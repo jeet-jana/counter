@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="count">0</h1>
+
+    <button id="inc" onclick="a()">Increase</button>
+    <button id="dec" onclick="b()">Decrease</button>
+    <button id="reset" onclick="c()">Reset</button>
+
+    <script>
+        var ver = document.querySelector("#count");
+        var hi = document.querySelector("#reset");
+        var bye = document.querySelector("#dec");
+        function but(){
+            if (Number(ver.innerHTML) > 0) {
+                ver.style.color = "green"
+                hi.disabled = false;
+                bye.disabled = false;
+                
+            }
+            else if (Number(ver.innerHTML) <= 0)  {
+                ver.style.color = "blue";
+                hi.disabled = true;
+                bye.disabled = true;
+            }
+        }
+        function a() {
+            ver.innerHTML = Number(ver.innerHTML) + 1;
+            but();
+        }
+        function b() {
+            ver.innerHTML = Number(ver.innerHTML) - 1;
+            but();
+        }
+        function c() {
+            ver.innerHTML = 0;
+            but();
+        }
+
+    </script>
+
+</body>
+
+</html>
